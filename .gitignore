@@ -1,0 +1,11 @@
+# Secrets
+.env
+
+# Working plans (kept local; see the spec, section 11)
+docs/plans/
+
+# Raw data fetched by the pipeline
+backend/data/raw/
+
+# macOS
+.DS_Store
