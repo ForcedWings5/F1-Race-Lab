@@ -9,3 +9,24 @@ backend/data/raw/
 
 # macOS
 .DS_Store
+
+# Virtual Environment
+.venv/
+
+# Compiled copies of my own files to start faster
+__pycache__/
+
+# Notes pip wrote during the install
+*.egg-info/
+
+# pytest memory of the latest run
+.pytest_cache/
+
+# mypy memory of the latest run
+.mypy_cache/
+
+# ruff memory of the latest run
+.ruff_cache/
+
+# Throwaway exploration scripts
+backend/explore/
