@@ -128,8 +128,10 @@ FastF1 is not used in this spec. It covers 2018 onward and can be added later as
 ### Command
 
 ```
-python -m f1app.pipeline.cli ingest --year 2024 --country Italy
+python -m f1app.pipeline.cli ingest --year 2024 --circuit Monza
 ```
+
+A race is identified by year and circuit, not country, because a country can hold more than one race in a year. Italy held two in 2024.
 
 Options:
 
@@ -140,7 +142,7 @@ The first race to load is the 2024 Italian Grand Prix at Monza, chosen as a dry 
 
 ### Steps
 
-1. **Find the race.** Query `sessions` for the year, country and session name "Race". Exactly one match is required; none or several is an error that lists what was found.
+1. **Find the race.** Query `sessions` for the year, circuit short name and session name "Race". Exactly one match is required; none or several is an error that lists what was found.
 2. **Fetch.** Request the other seven endpoints in the table above for that session.
 3. **Save raw responses** to `backend/data/raw/{race_id}/{endpoint}.json`. Later runs read these files unless `--refresh` is given.
 4. **Validate and shape** the raw JSON into Pydantic models. A response that does not match the expected shape is an error naming the endpoint and field.
